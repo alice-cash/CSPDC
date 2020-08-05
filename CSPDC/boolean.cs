@@ -1,17 +1,16 @@
 ﻿namespace CSPDC
 {
-    public struct boolean : IDataType
+    public partial class ByteManager
     {
-        public bool Value { get; set; }
-
-        public void ReadBytes(ByteReader br)
+        public static int booleanSize => 1;
+        public bool ReadBytesboolean()
         {
-            throw new System.NotImplementedException();
+            Enforce(booleanSize);
+            return ReadByte() != 0;
         }
-
-        public void WriteBytes(ByteWriter bw)
+        public void WriteBytesboolean(bool Value)
         {
-            throw new System.NotImplementedException();
+            WriteByte(Value ? (byte)1 : (byte)0);
         }
     }
 }

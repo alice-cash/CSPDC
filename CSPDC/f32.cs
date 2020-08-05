@@ -2,29 +2,22 @@
 
 namespace CSPDC
 {
-    public struct f32 : IDataType
+    public partial class ByteManager
     {
-        public static implicit operator f32(float value) => new f32(value);
-        public static implicit operator float(f32 value) => value.Value;
-        public float Value { get; set; }
-        public int Size => 4;
-        public f32(float value)
+        public static int f32Size => 4;
+        public unsafe float ReadBytesf32()
         {
-            Value = value;
-        }
-        public unsafe void ReadBytes(ByteReader br)
-        {
-            br.Enforce(Size);
-            byte[] data = br.ReadBytes(Size);
+            Enforce(f32Size);
+            byte[] data = ReadBytes(f32Size);
             uint r = BinaryPrimitives.ReadUInt32BigEndian(data);
-            Value = *(float*)&r;
+            return *(float*)&r;
         }
-        public unsafe void WriteBytes(ByteWriter bw)
+        public unsafe void WriteBytesf32(float Value)
         {
-            byte[] data = new byte[Size];
+            byte[] data = new byte[f32Size];
             float w = Value;
             BinaryPrimitives.WriteUInt32BigEndian(data, *(uint*)&w);
-            bw.WriteBytes(data);
+            WriteBytes(data);
         }
     }
 }

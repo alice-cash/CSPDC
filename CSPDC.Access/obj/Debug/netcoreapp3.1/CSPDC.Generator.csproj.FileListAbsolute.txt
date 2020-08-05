@@ -1,0 +1,12 @@
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\obj\Debug\netcoreapp3.1\CSPDC.Generator.csprojAssemblyReference.cache
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\obj\Debug\netcoreapp3.1\CSPDC.Generator.AssemblyInfoInputs.cache
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\obj\Debug\netcoreapp3.1\CSPDC.Generator.AssemblyInfo.cs
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\obj\Debug\netcoreapp3.1\CSPDC.Generator.csproj.CoreCompileInputs.cache
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\bin\Debug\netcoreapp3.1\CSPDC.Generator.deps.json
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\bin\Debug\netcoreapp3.1\CSPDC.Generator.dll
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\bin\Debug\netcoreapp3.1\CSPDC.Generator.pdb
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\bin\Debug\netcoreapp3.1\CSPDC.dll
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\bin\Debug\netcoreapp3.1\CSPDC.pdb
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\obj\Debug\netcoreapp3.1\CSPDC.Generator.csproj.CopyComplete
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\obj\Debug\netcoreapp3.1\CSPDC.Generator.dll
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC.Access\obj\Debug\netcoreapp3.1\CSPDC.Generator.pdb

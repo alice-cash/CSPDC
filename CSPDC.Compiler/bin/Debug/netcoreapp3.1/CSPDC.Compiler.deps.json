@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CSPDC.Compiler/1.0.0": {
+        "dependencies": {
+          "CSPDC": "1.0.0",
+          "CSPDC.Generator": "1.0.0"
+        },
+        "runtime": {
+          "CSPDC.Compiler.dll": {}
+        }
+      },
+      "CSPDC/1.0.0": {
+        "runtime": {
+          "CSPDC.dll": {}
+        }
+      },
+      "CSPDC.Generator/1.0.0": {
+        "dependencies": {
+          "CSPDC": "1.0.0"
+        },
+        "runtime": {
+          "CSPDC.Generator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CSPDC.Compiler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CSPDC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CSPDC.Generator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

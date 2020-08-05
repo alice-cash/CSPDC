@@ -2,30 +2,25 @@
 
 namespace CSPDC
 {
-    public struct pstring : IDataType
+    public partial class ByteManager
     {
-        public string Value { get; set; }
-        public Encoding Encoder { get; set;  }
-
-        public void ReadBytes(ByteReader br)
+        public string ReadBytespstring(Encoding Encoder = null)
         {
             if(Encoder == null) Encoder = Encoding.UTF8;
             
-            varint length = new varint();
-            length.ReadBytes(br);
-            br.Enforce(length.Value);
+            int length = ReadBytesvarint();
+            Enforce(length);
 
-            byte[] data = br.ReadBytes(length.Value);
-            Value = Encoder.GetString(data);
+            byte[] data = ReadBytes(length);
+            return Encoder.GetString(data);
         }
 
-        public void WriteBytes(ByteWriter bw)
+        public void WriteBytespstring(string Value, Encoding Encoder = null)
         {
             if (Encoder == null) Encoder = Encoding.UTF8;
             byte[] data = Encoder.GetBytes(Value);
-            varint length = data.Length;
-            length.WriteBytes(bw);
-            bw.WriteBytes(data);
+            WriteBytesvarint(data.Length);
+            WriteBytes(data);
         }
     }
 }

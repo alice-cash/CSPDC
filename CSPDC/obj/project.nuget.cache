@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EjWi9jNLcB1ybGcVQjog+yK2Q/iDofwKP5/tj2fd2Eevz6UMadWDaKyf2J1krVWS/jlsUgLjDrFEXWnUGkcPmw==",
+  "dgSpecHash": "4LA1Hox8+C4EGlgNRssCmRggFDOKTi21KDi5NbEzoh7uWIW+MpfwU7nJLJh0mnzjgDzZ8SLzNl5MjqbW3Wad0A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\super\\source\\repos\\alice-cash\\CSPDC\\CSPDC\\CSPDC.csproj",
+  "projectFilePath": "C:\\Users\\super\\source\\repos\\alice-cash\\CSPDC\\CSPDC\\CSPDC.ByteManager.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -2,29 +2,21 @@
 
 namespace CSPDC
 {
-    public struct i32 : IDataType
-    { 
-        public static implicit operator i32(int value) => new i32(value);
-        public static implicit operator int(i32 value) => value.Value;
-        public int Value { get; set; }
+    public partial class ByteManager
+    {
+        public static int i32Size => 4;
 
-        public int Size => 4;
-
-        public i32(int value)
+        public int ReadBytesi32()
         {
-            Value = value;
+            Enforce(i32Size);
+            byte[] data = ReadBytes(i32Size);
+            return BinaryPrimitives.ReadInt32BigEndian(data);
         }
-        public void ReadBytes(ByteReader br)
+        public void WriteBytes(int Value)
         {
-            br.Enforce(Size);
-            byte[] data = br.ReadBytes(Size);
-            Value = BinaryPrimitives.ReadInt32BigEndian(data);
-        }
-        public void WriteBytes(ByteWriter bw)
-        {
-            byte[] data = new byte[Size];
+            byte[] data = new byte[i32Size];
             BinaryPrimitives.WriteInt32BigEndian(data, Value);
-            bw.WriteBytes(data);
+            WriteBytes(data);
         }
     }
 }

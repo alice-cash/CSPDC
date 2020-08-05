@@ -2,27 +2,22 @@
 
 namespace CSPDC
 {
-    public struct i64 : IDataType
+    public partial class ByteManager
     {
-        public static implicit operator i64(long value) => new i64(value);
-        public static implicit operator long(i64 value) => value.Value;
-        public long Value { get; set; }
-        public int Size => 8;
-        public i64(long value)
+
+        public static int i64Size => 8;
+
+        public long ReadBytesi64()
         {
-            Value = value;
+            Enforce(i64Size);
+            byte[] data = ReadBytes(i64Size);
+            return BinaryPrimitives.ReadInt64BigEndian(data);
         }
-        public void ReadBytes(ByteReader br)
+        public void WriteBytesi64(long Value)
         {
-            br.Enforce(Size);
-            byte[] data = br.ReadBytes(Size);
-            Value = BinaryPrimitives.ReadInt64BigEndian(data);
-        }
-        public void WriteBytes(ByteWriter bw)
-        {
-            byte[] data = new byte[Size];
+            byte[] data = new byte[i64Size];
             BinaryPrimitives.WriteInt64BigEndian(data, Value);
-            bw.WriteBytes(data);
+            WriteBytes(data);
         }
 
     }

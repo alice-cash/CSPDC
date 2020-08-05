@@ -3,16 +3,10 @@ using System.Text;
 
 namespace CSPDC
 {
-    public struct cstring : IDataType
+    public partial class ByteManager
     {
-        public string Value { get; set; }
-
-        public int MaxLength { get; set; }
-        public Encoding Encoder { get; set; }
-
-        public void ReadBytes(ByteReader br)
+        public string ReadBytescstring(Encoding Encoder = null, int MaxLength = 65535)
         {
-            if (MaxLength == 0) MaxLength = 65535;
             if (Encoder == null) Encoder = Encoding.UTF8;
 
             int length = 0;
@@ -21,7 +15,7 @@ namespace CSPDC
 
             do
             {
-                read = br.ReadByte();
+                read = ReadByte();
                 result.Add(read);
                 length++;
                 if (length > MaxLength)
@@ -30,18 +24,17 @@ namespace CSPDC
             result.RemoveAt(length - 1); //remove the null byte
 
             byte[] data = result.ToArray();
-            Value = Encoder.GetString(data);
+            return Encoder.GetString(data);
         }
 
-        public void WriteBytes(ByteWriter bw)
+        public void WriteBytescstring(string Value, Encoding Encoder = null, int MaxLength = 65535)
         {
-            if (MaxLength == 0) MaxLength = 65535;
             if (Encoder == null) Encoder = Encoding.UTF8;
             byte[] data = Encoder.GetBytes(Value);
             if(data.Length > MaxLength)
                 throw new FieldOverflowException("cstring over MaxLength");
-            bw.WriteBytes(data);
-            bw.WriteByte(0x00);
+            WriteBytes(data);
+            WriteByte(0x00);
         }
     }
 }

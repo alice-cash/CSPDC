@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSPDC", "CSPDC\CSPDC.csproj", "{BFFA4A78-575C-4982-A952-BE7F8EF324FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSPDC.ByteManager", "CSPDC\CSPDC.ByteManager.csproj", "{BFFA4A78-575C-4982-A952-BE7F8EF324FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSPDC.Generator", "CSPDC.Access\CSPDC.Generator.csproj", "{7D1BF746-2D4F-4C5A-8ECD-5647BFCCAFE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSPDC.Generator", "CSPDC.Access\CSPDC.Generator.csproj", "{7D1BF746-2D4F-4C5A-8ECD-5647BFCCAFE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSPDC.Compiler", "CSPDC.Compiler\CSPDC.Compiler.csproj", "{A492FFEE-42F1-4F3C-8033-DC148F2593C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7D1BF746-2D4F-4C5A-8ECD-5647BFCCAFE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D1BF746-2D4F-4C5A-8ECD-5647BFCCAFE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D1BF746-2D4F-4C5A-8ECD-5647BFCCAFE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A492FFEE-42F1-4F3C-8033-DC148F2593C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A492FFEE-42F1-4F3C-8033-DC148F2593C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A492FFEE-42F1-4F3C-8033-DC148F2593C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A492FFEE-42F1-4F3C-8033-DC148F2593C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

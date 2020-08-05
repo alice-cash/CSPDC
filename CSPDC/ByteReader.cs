@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSPDC
 {
-    public class ByteReader
+    public partial class ByteManager
     {
         public byte[] ReadBytes(int length)
         {

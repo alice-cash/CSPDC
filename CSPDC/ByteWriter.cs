@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSPDC
 {
-    public class ByteWriter
+    public partial class ByteManager
     {
         public void WriteBytes(byte[] data)
         {

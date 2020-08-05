@@ -2,26 +2,17 @@
 
 namespace CSPDC
 {
-    public struct varint : IDataType
+    public partial class ByteManager
     {
-
-        public int Value { get; set; }
-        public varint(int value)
+        public int ReadBytesvarint()
         {
-            Value = value;
-        }
-
-        public void ReadBytes(ByteReader br)
-        {
-            br.Enforce(1);
-
             int result = 0;
             int numRead = 0;
             byte read;
             do
             {
-                br.Enforce(1);
-                read = br.ReadByte();
+                Enforce(1);
+                read = ReadByte();
                 int value = ((byte)read & 0b01111111);
                 result |= (value << (7 * numRead));
 
@@ -29,8 +20,9 @@ namespace CSPDC
                 if (numRead > 5)
                     throw new FieldOverflowException("varint too long");
             } while ((read & 0b10000000) != 0);
+            return result;
         }
-        public void WriteBytes(ByteWriter bw)
+        public void WriteBytesvarint(int Value)
         {
             byte[] data = new byte[5];
             byte length = 0;
@@ -53,11 +45,7 @@ namespace CSPDC
             {
                 return_data[i] = data[i];
             }
-            bw.WriteBytes(data);
+            WriteBytes(data);
         }
-
-        public static implicit operator varint(int value) => new varint(value);
-        public static implicit operator int(varint value) => value.Value;
-
     }
 }

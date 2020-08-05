@@ -2,29 +2,22 @@
 
 namespace CSPDC
 {
-    public struct lf64 : IDataType
+    public partial class ByteManager
     {
-        public static implicit operator lf64(double value) => new lf64(value);
-        public static implicit operator double(lf64 value) => value.Value;
-        public double Value { get; set; }
-        public int Size => 4;
-        public lf64(double value)
+        public static int lf64Size => 4;
+        public unsafe double ReadByteslf16()
         {
-            Value = value;
-        }
-        public unsafe void ReadBytes(ByteReader br)
-        {
-            br.Enforce(Size);
-            byte[] data = br.ReadBytes(Size);
+            Enforce(lf64Size);
+            byte[] data = ReadBytes(lf64Size);
             ulong r = BinaryPrimitives.ReadUInt64LittleEndian(data);
-            Value = *(double*)&r;
+            return *(double*)&r;
         }
-        public unsafe void WriteBytes(ByteWriter bw)
+        public unsafe void WriteByteslf16(double Value)
         {
-            byte[] data = new byte[Size];
+            byte[] data = new byte[lf64Size];
             double w = Value;
             BinaryPrimitives.WriteUInt64LittleEndian(data, *(ulong*)&w);
-            bw.WriteBytes(data);
+            WriteBytes(data);
         }
     }
 }

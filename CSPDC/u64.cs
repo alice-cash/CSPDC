@@ -2,29 +2,20 @@
 
 namespace CSPDC
 {
-    public struct u64 : IDataType
+    public partial class ByteManager
     {
-        public static implicit operator u64(ulong value) => new u64(value);
-        public static implicit operator ulong(u64 value) => value.Value;
-        public ulong Value { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
-        public int Size => 8;
-        public u64(ulong value)
+        public static int u64Size => 8;
+        public ulong ReadBytesu64()
         {
-            Value = value;
+            Enforce(u64Size);
+            byte[] data = ReadBytes(u64Size);
+            return BinaryPrimitives.ReadUInt64BigEndian(data);
         }
-
-        public void ReadBytes(ByteReader br)
+        public void WriteBytesu64(ulong Value)
         {
-            br.Enforce(Size);
-            byte[] data = br.ReadBytes(Size);
-            Value = BinaryPrimitives.ReadUInt64BigEndian(data);
-        }
-        public void WriteBytes(ByteWriter bw)
-        {
-            byte[] data = new byte[Size];
+            byte[] data = new byte[u64Size];
             BinaryPrimitives.WriteUInt64BigEndian(data, Value);
-            bw.WriteBytes(data);
+            WriteBytes(data);
         }
 
 

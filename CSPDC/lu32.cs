@@ -2,29 +2,20 @@
 
 namespace CSPDC
 {
-    public struct lu32 : IDataType
+    public partial class ByteManager
     {
-        public static implicit operator lu32(int value) => new lu32(value);
-        public static implicit operator int(lu32 value) => value.Value;
-
-        public int Value { get; set; }
-
-        public int Size => 4;
-        public lu32(int value)
+        public static int lu32Size => 4;
+        public uint ReadByteslu32()
         {
-            Value = value;
+            Enforce(lu32Size);
+            byte[] data = ReadBytes(lu32Size);
+            return BinaryPrimitives.ReadUInt32LittleEndian(data);
         }
-        public void ReadBytes(ByteReader br)
+        public void WriteByteslu32(uint Value)
         {
-            br.Enforce(Size);
-            byte[] data = br.ReadBytes(Size);
-            Value = BinaryPrimitives.ReadInt32LittleEndian(data);
-        }
-        public void WriteBytes(ByteWriter bw)
-        {
-            byte[] data = new byte[Size];
-            BinaryPrimitives.WriteInt32LittleEndian(data, Value);
-            bw.WriteBytes(data);
+            byte[] data = new byte[lu32Size];
+            BinaryPrimitives.WriteUInt32LittleEndian(data, Value);
+            WriteBytes(data);
         }
     }
 }

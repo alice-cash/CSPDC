@@ -1,24 +1,16 @@
 ﻿namespace CSPDC
 {
-    public struct li8 : IDataType
+    public partial class ByteManager
     {
-        public static implicit operator li8(byte value) => new li8(value);
-        public static implicit operator byte(li8 value) => value.Value;
-
-        public byte Value { get; set; }
-        public int Size => 1;
-        public li8(byte value)
+        public static int li8Size => 1;
+        public byte ReadBytesli8()
         {
-            Value = value;
+            Enforce(li8Size);
+            return ReadByte();
         }
-        public void ReadBytes(ByteReader br)
+        public void WriteBytesli8(byte Value)
         {
-            br.Enforce(Size);
-            Value = br.ReadByte();
-        }
-        public void WriteBytes(ByteWriter bw)
-        {
-            bw.WriteByte(Value);
+            WriteByte(Value);
         }
     }
 }

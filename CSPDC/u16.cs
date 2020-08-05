@@ -2,28 +2,20 @@
 
 namespace CSPDC
 {
-    public struct u16 : IDataType
+    public partial class ByteManager
     {
-        public static implicit operator u16(ushort value) => new u16(value);
-        public static implicit operator ushort(u16 value) => value.Value;
-        public ushort Value { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
-        public int Size => 2;
-        public u16(ushort value)
+        public static int u16Size => 2;
+        public ushort ReadBytesu16()
         {
-            Value = value;
+            Enforce(u16Size);
+            byte[] data = ReadBytes(u16Size);
+            return BinaryPrimitives.ReadUInt16BigEndian(data);
         }
-        public void ReadBytes(ByteReader br)
+        public void WriteBytes(ushort Value)
         {
-            br.Enforce(Size);
-            byte[] data = br.ReadBytes(Size);
-            Value = BinaryPrimitives.ReadUInt16BigEndian(data);
-        }
-        public void WriteBytes(ByteWriter bw)
-        {
-            byte[] data = new byte[Size];
+            byte[] data = new byte[u16Size];
             BinaryPrimitives.WriteUInt16BigEndian(data, Value);
-            bw.WriteBytes(data);
+            WriteBytes(data);
         }
     }
 }

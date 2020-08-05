@@ -15,9 +15,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\super\\source\\repos\\alice-cash\\CSPDC\\CSPDC\\CSPDC.csproj",
+      "projectUniqueName": "C:\\Users\\super\\source\\repos\\alice-cash\\CSPDC\\CSPDC\\CSPDC.ByteManager.csproj",
       "projectName": "CSPDC",
-      "projectPath": "C:\\Users\\super\\source\\repos\\alice-cash\\CSPDC\\CSPDC\\CSPDC.csproj",
+      "projectPath": "C:\\Users\\super\\source\\repos\\alice-cash\\CSPDC\\CSPDC\\CSPDC.ByteManager.csproj",
       "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\super\\source\\repos\\alice-cash\\CSPDC\\CSPDC\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,0 +1,9 @@
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC\bin\Debug\netcoreapp3.1\CSPDC.deps.json
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC\bin\Debug\netcoreapp3.1\CSPDC.dll
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC\bin\Debug\netcoreapp3.1\CSPDC.pdb
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC\obj\Debug\netcoreapp3.1\CSPDC.csprojAssemblyReference.cache
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC\obj\Debug\netcoreapp3.1\CSPDC.AssemblyInfoInputs.cache
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC\obj\Debug\netcoreapp3.1\CSPDC.AssemblyInfo.cs
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC\obj\Debug\netcoreapp3.1\CSPDC.csproj.CoreCompileInputs.cache
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC\obj\Debug\netcoreapp3.1\CSPDC.dll
+C:\Users\super\source\repos\alice-cash\CSPDC\CSPDC\obj\Debug\netcoreapp3.1\CSPDC.pdb

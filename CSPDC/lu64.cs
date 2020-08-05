@@ -2,31 +2,20 @@
 
 namespace CSPDC
 {
-    public struct lu64 : IDataType
+    public partial class ByteManager
     {
-
-
-        public ulong Value { get; set; }
-
-        public int Size => 8;
-        public lu64(ulong value)
+        public static int lu64Size => 8;
+        public ulong ReadByteslu64()
         {
-            Value = value;
+            Enforce(lu64Size);
+            byte[] data = ReadBytes(lu64Size);
+            return BinaryPrimitives.ReadUInt64LittleEndian(data);
         }
-        public void ReadBytes(ByteReader br)
+        public void WriteByteslu64(ulong Value)
         {
-            br.Enforce(Size);
-            byte[] data = br.ReadBytes(Size);
-            Value = BinaryPrimitives.ReadUInt64LittleEndian(data);
-        }
-        public void WriteBytes(ByteWriter bw)
-        {
-            byte[] data = new byte[Size];
+            byte[] data = new byte[lu64Size];
             BinaryPrimitives.WriteUInt64LittleEndian(data, Value);
-            bw.WriteBytes(data);
+            WriteBytes(data);
         }
-
-        public static implicit operator lu64(ulong value) => new lu64(value);
-        public static implicit operator ulong(lu64 value) => value.Value;
     }
 }

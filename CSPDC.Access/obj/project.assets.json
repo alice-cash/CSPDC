@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "CSPDC/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CSPDC.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CSPDC.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CSPDC/1.0.0": {
+      "type": "project",
+      "path": "../CSPDC/CSPDC.ByteManager.csproj",
+      "msbuildProject": "../CSPDC/CSPDC.ByteManager.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "CSPDC >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\super\\.nuget\\packages\\": {},
@@ -40,7 +59,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\super\\source\\repos\\alice-cash\\CSPDC\\CSPDC\\CSPDC.ByteManager.csproj": {
+              "projectPath": "C:\\Users\\super\\source\\repos\\alice-cash\\CSPDC\\CSPDC\\CSPDC.ByteManager.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
