@@ -7,4 +7,12 @@
     <RootNamespace>CSPDC</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="CSPDC.Module.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="CSPDC.Module.cs" />
+  </ItemGroup>
+
 </Project>

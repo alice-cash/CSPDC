@@ -25,7 +25,7 @@ namespace CSPDC.Generator
             if (ModuleAccessability != "")
                 tw.Write("{0} ", ModuleAccessability);
 
-            tw.WriteLine("{0} {1}", ModuleType, ModuleName);
+            tw.WriteLine("{0} {1} : CSPDC.Module", ModuleType, ModuleName);
             tw.WriteLine("{");
             tw.Indent++;
             foreach (var child in Children)

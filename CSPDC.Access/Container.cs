@@ -14,10 +14,12 @@ namespace CSPDC.Generator
 
         public BlockModule Parent { get; }
 
+        public string Name { get; }
+
         public Container(BlockModule parent)
         {
+            Name = parent.ModuleName;
             Parent = parent;
-
         }
 
         public void BuildModule(IndentedTextWriter tw)
@@ -56,8 +58,6 @@ namespace CSPDC.Generator
             tw.Indent--;
             tw.WriteLine("}");
         }
-
-
 
     }
 }

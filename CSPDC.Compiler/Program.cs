@@ -21,13 +21,15 @@ namespace CSPDC.Compiler
 
             f.Add(new PStringBlockType("TEST", DataType.varint));
             f.Add(new PStringBlockType("T232", 5));*/
+            var test = new BitfieldField() { Name = "A4", Size = 8, Signed = true };
             BitfieldField[] bitfielddata = { new BitfieldField() { Name = "A1", Size = 1, Signed = true },
                 new BitfieldField(){ Name = "A2", Size = 2, Signed = true },
                 new BitfieldField(){ Name = "A3", Size = 4, Signed = true },
-                new BitfieldField(){ Name = "A4", Size = 8, Signed = true },
+                test,
             new BitfieldField() { Name = "A5", Size = 1+16, Signed = true } };
 
-        f.Add(new BitfieldBlockType("TEE", bitfielddata));
+            f.Add(new BitfieldBlockType("TEE", bitfielddata));
+            f.Add(new PStringBlockType("TEE", test));
 
             var o = new Struct() { ModuleName = "BlaBla", Children = d };
             d.Add(new Container(o) { Fields = f });
