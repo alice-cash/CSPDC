@@ -9,7 +9,7 @@ namespace CSPDC.Generator
     public class Namespace : BlockModule
     {
         public override string ModuleType => "namespace";
-
         public override string ModuleAccessability => "";
+        public override bool GeneratedCodeAttribute => false;
     }
 }

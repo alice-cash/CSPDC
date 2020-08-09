@@ -9,5 +9,6 @@ namespace CSPDC.Generator
     {
         public override string ModuleType => "struct";
         public override string ModuleAccessability => "public";
+        public override bool GeneratedCodeAttribute =>true;
     }
 }

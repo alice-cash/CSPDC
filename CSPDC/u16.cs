@@ -11,7 +11,7 @@ namespace CSPDC
             byte[] data = ReadBytes(u16Size);
             return BinaryPrimitives.ReadUInt16BigEndian(data);
         }
-        public void WriteBytes(ushort Value)
+        public void WriteBytesu16(ushort Value)
         {
             byte[] data = new byte[u16Size];
             BinaryPrimitives.WriteUInt16BigEndian(data, Value);

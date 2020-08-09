@@ -4,7 +4,7 @@ namespace CSPDC
 {
     public partial class ByteManager
     {
-        public string ReadBytespstring(Encoding Encoder = null)
+        public string ReadBytesstring(Encoding Encoder = null)
         {
             if(Encoder == null) Encoder = Encoding.UTF8;
             
@@ -15,7 +15,7 @@ namespace CSPDC
             return Encoder.GetString(data);
         }
 
-        public void WriteBytespstring(string Value, Encoding Encoder = null)
+        public void WriteBytesstring(string Value, Encoding Encoder = null)
         {
             if (Encoder == null) Encoder = Encoding.UTF8;
             byte[] data = Encoder.GetBytes(Value);

@@ -61,7 +61,6 @@ namespace CSPDC
 
         varint,
         boolean,
-        pstring,
         buffer,
         @void,
         bitfield,
